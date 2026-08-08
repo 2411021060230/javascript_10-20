@@ -1,0 +1,13 @@
+const a = parseInt(prompt("Enter first positive integer:"));
+const b = parseInt(prompt("Enter second positive integer:"));
+
+let x = a;
+let y = b;
+
+while (y !== 0) {
+    let remainder = x % y;
+    x = y;
+    y = remainder;
+}
+
+console.log("GCD =", x);
