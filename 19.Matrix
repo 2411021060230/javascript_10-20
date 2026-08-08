@@ -1,0 +1,55 @@
+const rows = parseInt(prompt("Enter number of rows:"));
+const cols = parseInt(prompt("Enter number of columns:"));
+
+let A = [];
+let B = [];
+
+console.log("Enter Matrix A:");
+
+for (let i = 0; i < rows; i++) {
+    A[i] = prompt(`Row ${i + 1}:`).split(" ").map(Number);
+}
+
+console.log("Enter Matrix B:");
+
+for (let i = 0; i < rows; i++) {
+    B[i] = prompt(`Row ${i + 1}:`).split(" ").map(Number);
+}
+
+// Matrix Addition
+let addition = [];
+
+for (let i = 0; i < rows; i++) {
+    addition[i] = [];
+
+    for (let j = 0; j < cols; j++) {
+        addition[i][j] = A[i][j] + B[i][j];
+    }
+}
+
+console.log("Matrix Addition:");
+
+for (let row of addition) {
+    console.log(row.join(" "));
+}
+
+// Matrix Multiplication
+let multiplication = [];
+
+for (let i = 0; i < rows; i++) {
+    multiplication[i] = [];
+
+    for (let j = 0; j < cols; j++) {
+        multiplication[i][j] = 0;
+
+        for (let k = 0; k < cols; k++) {
+            multiplication[i][j] += A[i][k] * B[k][j];
+        }
+    }
+}
+
+console.log("Matrix Multiplication:");
+
+for (let row of multiplication) {
+    console.log(row.join(" "));
+}
