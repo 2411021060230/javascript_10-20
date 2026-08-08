@@ -1,0 +1,15 @@
+const a = parseInt(prompt("Enter first positive integer:"));
+const b = parseInt(prompt("Enter second positive integer:"));
+
+function gcd(x, y) {
+    while (y !== 0) {
+        let remainder = x % y;
+        x = y;
+        y = remainder;
+    }
+    return x;
+}
+
+const lcm = (a * b) / gcd(a, b);
+
+console.log("LCM =", lcm);
