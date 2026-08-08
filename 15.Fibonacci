@@ -1,0 +1,12 @@
+const n = parseInt(prompt("Enter the number of terms:"));
+function fibonacci(num) {
+    if (num <= 1) {
+        return num;
+    }
+    return fibonacci(num - 1) + fibonacci(num - 2);
+}
+let series = [];
+for (let i = 0; i < n; i++) {
+    series.push(fibonacci(i));
+}
+console.log("Fibonacci Series:", series.join(" "));
