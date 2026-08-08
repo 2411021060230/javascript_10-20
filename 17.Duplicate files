@@ -1,0 +1,11 @@
+const str = prompt("Enter a string:");
+
+let result = "";
+
+for (let char of str) {
+    if (!result.includes(char)) {
+        result += char;
+    }
+}
+
+console.log("String after removing duplicates:", result);
