@@ -1,0 +1,21 @@
+const text = prompt("Enter text:");
+const key = parseInt(prompt("Enter encryption key:"));
+
+function xorEncryptDecrypt(message, key) {
+    let result = "";
+
+    for (let i = 0; i < message.length; i++) {
+        result += String.fromCharCode(
+            message.charCodeAt(i) ^ key
+        );
+    }
+
+    return result;
+}
+
+const encrypted = xorEncryptDecrypt(text, key);
+const decrypted = xorEncryptDecrypt(encrypted, key);
+
+console.log("Original Message:", text);
+console.log("Encrypted Message:", encrypted);
+console.log("Decrypted Message:", decrypted);
